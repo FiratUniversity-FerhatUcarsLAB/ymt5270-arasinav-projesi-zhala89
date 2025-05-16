@@ -1,146 +1,125 @@
-# 📑 YMT5270 - Innovative Machine Learning Environments
+# YMT5270 Midterm Project: Data Analysis and Machine Learning with Orange
 
-## Midterm Project Report
+## Student Information
 
-**Student:** Zhala Sarkawt Othman
+* **Full Name**: Zhala Sarkawt Othman
+* **Student Number**: *(241137201)*
+* **Email**: *(Zhala Sarkawt Othman)*
 
----
+## Project Summary
 
-## 🗂️ 1. Dataset Selection
+> This project analyzes the "Mental Health in Tech Survey" dataset, sourced from Kaggle, to explore patterns in mental health treatment among tech workers. The goal is to predict whether an individual has sought mental health treatment based on demographic and workplace factors. Orange Data Mining was used for Exploratory Data Analysis (EDA), preprocessing, and machine learning classification without requiring any programming. Key preprocessing steps included imputation for missing values and removal of outliers. Two classification models were tested: Logistic Regression and Random Forest. Random Forest achieved the best performance with an accuracy of 72.2% and AUC of 0.788. The most important features influencing treatment prediction were family history, work interference, and benefits. This project demonstrates the effectiveness of visual data mining tools like Orange in building interpretable ML workflows.
 
-* **Dataset Name:** Mental Health in Tech Survey
-* **Source:** [Kaggle - Mental Health in Tech Survey](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
-* **License:** Open license (suitable for public educational use)
-* **Original Collector:** Open Sourcing Mental Illness (OSMI) initiative
-* **Total Samples (Rows):** 1,259
-* **Total Features (Columns):** 26
-* **Target Variable:** `treatment` (Yes/No) – indicating whether the individual has sought mental health treatment
-* **Missing Data:** Approximately 2.4% across the dataset
+## Dataset
 
-This dataset was selected due to its relevance to real-world mental health issues in the tech industry and its suitability for classification tasks using Orange Data Mining.
+### Dataset Information
 
----
+* **Dataset Name**: Mental Health in Tech Survey
+* **Source**: [Kaggle - OSMI Mental Health in Tech Survey](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+* **License**: Open (for educational/public use)
+* **Dataset Size**: 1,259 rows, 26 columns
 
-## 🎯 2. Project Objective and Problem Type
+### Dataset Description
 
-* **Objective:** To build a machine learning model that predicts whether a tech employee has sought mental health treatment.
-* **Machine Learning Task:** Classification
-* **Tool Used:** Orange Data Mining (No programming required)
+> The dataset includes responses from individuals working in tech-related roles, collected by the Open Sourcing Mental Illness (OSMI) initiative. It covers a variety of factors, such as age, gender, family mental health history, workplace support, and whether the respondent has sought treatment. Some values are missing or inconsistent (especially in age and gender), which required cleaning. The target variable for classification is `treatment`, indicating whether the person has sought mental health treatment.
 
----
+### Feature Descriptions
 
-## 📊 3. Exploratory Data Analysis (EDA)
+| Feature Name    | Data Type   | Description                                     | Example      |
+| --------------- | ----------- | ----------------------------------------------- | ------------ |
+| Age             | Numerical   | Age of respondent                               | 29           |
+| Gender          | Categorical | Self-reported gender                            | "Male"       |
+| family\_history | Categorical | Family history of mental illness                | "Yes"        |
+| work\_interfere | Categorical | Impact of mental health on work                 | "Often"      |
+| remote\_work    | Categorical | Whether respondent works remotely               | "Yes"        |
+| benefits        | Categorical | Availability of mental health benefits          | "Don't know" |
+| care\_options   | Categorical | Access to mental health care options at work    | "No"         |
+| tech\_company   | Categorical | Whether the employer is a tech company          | "Yes"        |
+| treatment       | Categorical | Target: whether respondent has sought treatment | "Yes"        |
 
-Using Orange Data Mining's visual widgets, the following steps were conducted:
+## Exploratory Data Analysis (EDA)
 
-* **Data Cleaning:**
+### Basic Statistics
 
-  * Removed or ignored irrelevant columns such as `Timestamp`, `state`, and `Country`.
-  * Set `treatment` as the target variable.
+> * Age: Mean = 32.1, Min = 18, Max = 72 (outliers > 100 removed)
+> * Gender: normalized to standard categories (e.g., Male, Female, Non-binary)
+> * 2.4% missing data across features; handled via imputation
 
-* **Missing Values:**
+### Data Preprocessing
 
-  * Imputation used to handle missing values in `Age`, `Gender`, and `work_interfere`.
+* Imputed missing values in `age`, `gender`, and `work_interfere`
+* Removed extreme outliers in age (> 100 or < 18)
+* Encoded categorical variables (One-Hot or Label Encoding)
+* Ignored irrelevant columns: `Timestamp`, `state`, `country`
 
-* **Outlier Detection and Handling:**
+### Visualizations
 
-  * Removed unrealistic age entries (e.g., age < 15 or > 80).
+#### Visualization 1: Class Distribution
 
-* **Class Balance:**
+![Class Distribution](images/class_distribution.png)
 
-  * Moderate class imbalance observed in the target variable (`treatment`).
+> Shows a moderate class imbalance between those who sought treatment vs. those who did not.
 
-* **Correlation Analysis:**
+#### Visualization 2: Family History vs Treatment
 
-  * `family_history` and `work_interfere` showed notable correlation with the target.
+![Family History vs Treatment](images/family_treatment.png)
 
-* **Visualization Techniques Used:**
+> Strong correlation between family mental illness history and likelihood of seeking treatment.
 
-  * Histograms, box plots, scatter plots, and feature distributions were explored.
+### Feature Relationships
 
----
+> Feature correlation matrix and scatter plots revealed that `family_history`, `work_interfere`, and `benefits` were most predictive. Age and gender showed some correlation but were less significant.
 
-## 🔧 4. Feature Selection
+## Machine Learning Application
 
-Features included in the modeling process:
+### Method Used
 
-* `Gender`
-* `Age`
-* `family_history`
-* `work_interfere`
-* `remote_work`
-* `benefits`
-* `care_options`
-* `tech_company`
+> Classification was chosen to predict a binary target variable (`treatment`). This method suits the goal of determining whether individuals are likely to seek treatment based on workplace and personal factors.
 
-Columns such as `Timestamp`, `state`, and `Country` were excluded due to irrelevance or high cardinality with low predictive value.
+### Models and Parameters
 
----
+* **Logistic Regression**: Default settings
+* **Random Forest**: Trees = 10, Random State = 42
 
-## 🤖 5. Machine Learning Models Applied
+(Include Orange widget screenshots here if required)
 
-Two supervised learning models were implemented using Orange:
+### Model Evaluation
 
-* **Logistic Regression**
-* **Random Forest Classifier**
+| Metric    | Logistic Regression | Random Forest |
+| --------- | ------------------- | ------------- |
+| Accuracy  | 65.9%               | 72.2%         |
+| AUC       | 0.747               | 0.788         |
+| F1 Score  | 0.646               | 0.722         |
+| Precision | 0.684               | 0.722         |
+| Recall    | 0.659               | 0.722         |
+| MCC       | 0.340               | 0.444         |
 
-Each model was evaluated using cross-validation with accuracy, AUC, F1 Score, precision, recall, and Matthews Correlation Coefficient (MCC) metrics.
+### Interpretation of Results
 
----
+> Random Forest outperformed Logistic Regression across all metrics. This model effectively captured non-linear patterns in the data. Important features were work-related, rather than demographic. Limitations included inconsistent data entries and class imbalance.
 
-## 📈 6. Evaluation and Performance Comparison
+## Orange Workflow
 
-| Metric        | Logistic Regression | Random Forest |
-| ------------- | ------------------- | ------------- |
-| **AUC**       | 0.747               | 0.788         |
-| **Accuracy**  | 65.9%               | 72.2%         |
-| **F1 Score**  | 0.646               | 0.722         |
-| **Precision** | 0.684               | 0.722         |
-| **Recall**    | 0.659               | 0.722         |
-| **MCC**       | 0.340               | 0.444         |
+> Below is the Orange workflow used in this project. It includes steps for file import, preprocessing, visualization, model training, and evaluation.
 
-### Key Observations:
+![Orange Workflow](images/orange_workflow.png)
 
-* **Best Performing Model:** Random Forest performed better across all evaluation metrics.
-* **Most Influential Features:** `family_history`, `work_interfere`, and `benefits`.
-* **Demographics Impact:** Gender and age had moderate influence, but work-related factors had higher predictive power.
-* **Limitations Identified:**
+## Conclusion and Recommendations
 
-  * Class imbalance and missing values slightly impacted performance.
-  * Inconsistent entries in `Gender` and `Age` reduced model clarity.
+> The project demonstrated the power of visual machine learning tools for classification tasks. Random Forest is recommended for future use due to its strong performance. Future improvements could include additional preprocessing, feature engineering, and trying other ensemble models.
 
----
+## References
 
-## 🧠 7. Interpretation of Results
+1. [Kaggle Dataset](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+2. Orange Data Mining: [https://orangedatamining.com/](https://orangedatamining.com/)
+3. Scikit-learn Metrics Documentation: [https://scikit-learn.org/stable/modules/model\_evaluation.html](https://scikit-learn.org/stable/modules/model_evaluation.html)
 
-* **Model Insight:** Random Forest was more effective in capturing nonlinear relationships in the data, leading to better classification accuracy.
-* **Feature Insight:** Indicators related to workplace support (`benefits`, `care_options`, `work_interfere`) and personal background (`family_history`) were crucial in predicting mental health treatment.
-* **Data Quality Impact:** Missing data and demographic inconsistency (especially in gender entries) posed a challenge, but imputation and cleaning improved performance.
+## Appendices
 
----
+### Orange Project File
 
-## ✅ 8. Conclusion
+> [mental\_health\_project.ows](project/mental_health_project.ows)
 
-This project successfully demonstrated how Orange Data Mining can be used to perform end-to-end machine learning without writing any code. The platform's intuitive visual interface enabled efficient data preprocessing, visualization, and model evaluation.
+### Dataset File or Link
 
-* **Recommended Model:** Random Forest
-* **Future Work:**
-
-  * Use SMOTE or other resampling techniques to handle class imbalance.
-  * Consider refining gender and age categories for better consistency.
-
----
-
-## 📁 9. Submitted Files
-
-* ✅ `ReadMe_YourProject.md` (completed based on provided template)
-* ✅ Orange workflow file (`.ows`)
-* ✅ Dataset link: [Kaggle Dataset](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
-
----
-
-
-## ✉️ Contact
-
-For any project-related questions: **[zhala.sarkawt@gmail.com]**
-
+> [mental\_health.csv](data/mental_health.csv) or [Online Source](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
