@@ -1,93 +1,146 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/d_L6NR7B)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19250147&assignment_repo_type=AssignmentRepo)
-# YMT5270 - Yenilikçi Makine Öğrenme Ortamları
-## Ara Sınav Projesi
+# 📑 YMT5270 - Innovative Machine Learning Environments
 
-### Genel Bakış
+## Midterm Project Report
 
-Bu ödev, YMT5270 - Yenilikçi Makine Öğrenme Ortamları dersi kapsamında verilen ara sınav projesidir. Bu projede, kod yazmadan görsel programlama aracı olan [Orange Data Mining](https://orangedatamining.com/) platformunu kullanarak veri analizi ve makine öğrenmesi uygulamaları geliştirmeniz beklenmektedir.
-
-### Proje Hedefleri
-
-Bu projenin ana hedefleri:
-
-1. Orange Data Mining platformunu etkili bir şekilde kullanabilme becerisi kazanmak
-2. Keşifsel Veri Analizi (EDA) tekniklerini uygulamak
-3. Seçilen veri setine uygun makine öğrenmesi yöntemlerini uygulamak
-4. Veri görselleştirme ve sonuçları yorumlama becerilerini geliştirmek
-
-### Gereksinimler
-
-Projeyi tamamlamak için aşağıdaki gereksinimleri yerine getirmeniz gerekmektedir:
-
-1. **Veri Seti Seçimi**: 
-   - [Kaggle](https://www.kaggle.com/datasets), [UCI Machine Learning Repository](https://archive.ics.uci.edu/), [Google Dataset Search](https://datasetsearch.research.google.com/) gibi kaynaklardan bir veri seti seçilmelidir.
-   - Veri seti tercihen en az 5 öznitelik ve 100 örnek içermelidir.
-   - Veri setinin kaynağı ve lisans bilgileri belirtilmelidir.
-
-2. **Keşifsel Veri Analizi (EDA)**:
-   - Veri seti içeriğinin tanımlanması
-   - Temel istatistiklerin hesaplanması
-   - Eksik verilerin tespit edilmesi ve işlenmesi
-   - Aykırı değerlerin belirlenmesi
-   - Öznitelikler arasındaki ilişkilerin incelenmesi
-   - Uygun görselleştirmelerin yapılması (histogramlar, kutu grafikleri, dağılım grafikleri vb.)
-
-3. **Makine Öğrenmesi Uygulaması**:
-   - Veri setinize uygun olarak aşağıdakilerden **BİRİNİ** seçip uygulayınız:
-     - **Sınıflandırma**: Hedef değişkeni kategorik ise
-     - **Regresyon**: Hedef değişkeni sayısal ise
-     - **Kümeleme**: Gözetimsiz öğrenme yaklaşımı kullanmak istiyorsanız
-
-4. **Değerlendirme ve Yorumlama**:
-   - Kullanılan modellerin performansının değerlendirilmesi
-   - Sonuçların yorumlanması ve önerilerin sunulması
-
-### Teslim Edilecek Dosyalar
-
-1. Doldurulmuş `ReadMe_YourProject.md` dosyası (şablonu bu repoda bulabilirsiniz)
-2. Orange proje dosyanız (.ows uzantılı)
-3. Kullandığınız veri seti veya veri setinin erişim bağlantısı
-
-### Orange Data Mining Kurulumu ve Kullanımı
-
-1. Orange Data Mining platformunu [resmi web sitesinden](https://orangedatamining.com/download/) indirip kurabilirsiniz.
-2. Temel kullanım için [Orange Video Eğitimleri](https://www.youtube.com/c/OrangeDataMining) izlenebilir.
-3. Ayrıca [Orange Dokümantasyonu](https://orangedatamining.com/docs/) detaylı bilgi için faydalı olacaktır.
-
-### Örnek İş Akışı
-
-Aşağıda basit bir örnek iş akışı gösterilmiştir:
-
-![Örnek Orange İş Akışı](img/example_workflow.png)
-
-Repodaki `example` klasöründe örnek bir Orange iş akışı dosyası bulabilirsiniz. 
-- Lütfen kendi proje iş akışı dosyanızı `project` klasörüne yükleyiniz. 
-
-### Değerlendirme Kriterleri
-
-| Kriter | Ağırlık |
-|--------|---------|
-| Veri seti seçimi ve tanımlama | %15 |
-| Keşifsel veri analizi (EDA) kalitesi | %25 |
-| Makine öğrenmesi uygulaması | %30 |
-| Sonuçların yorumlanması | %20 |
-| Dokümantasyon ve rapor kalitesi | %10 |
-
-### Önemli Tarihler
-
-- **Proje Duyurusu**: 20 Nisan 2025
-- **Teslim Tarihi**: 15 Mayıs 2025, 23:59
-
-### Akademik Dürüstlük ve Etik Beyanı
-
-Bu ödev bireysel bir çalışmadır. Başkalarının çalışmalarını kendinizinmiş gibi sunmak akademik etik kurallarına aykırıdır. 
-Yararlandığınız tüm kaynakları uygun şekilde belirtmeniz gerekmektedir.
-
-### İletişim
-
-Sorularınız için: fucar@firat.edu.tr
+**Student:** Zhala Sarkawt Othman
 
 ---
 
-**Not**: Bu repo, GitHub Classroom üzerinden assignment ile oluşturulmuştur. Projenizi tamamladıktan sonra GitHub Classroom assignment submit edilmelidir.
+## 🗂️ 1. Dataset Selection
+
+* **Dataset Name:** Mental Health in Tech Survey
+* **Source:** [Kaggle - Mental Health in Tech Survey](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+* **License:** Open license (suitable for public educational use)
+* **Original Collector:** Open Sourcing Mental Illness (OSMI) initiative
+* **Total Samples (Rows):** 1,259
+* **Total Features (Columns):** 26
+* **Target Variable:** `treatment` (Yes/No) – indicating whether the individual has sought mental health treatment
+* **Missing Data:** Approximately 2.4% across the dataset
+
+This dataset was selected due to its relevance to real-world mental health issues in the tech industry and its suitability for classification tasks using Orange Data Mining.
+
+---
+
+## 🎯 2. Project Objective and Problem Type
+
+* **Objective:** To build a machine learning model that predicts whether a tech employee has sought mental health treatment.
+* **Machine Learning Task:** Classification
+* **Tool Used:** Orange Data Mining (No programming required)
+
+---
+
+## 📊 3. Exploratory Data Analysis (EDA)
+
+Using Orange Data Mining's visual widgets, the following steps were conducted:
+
+* **Data Cleaning:**
+
+  * Removed or ignored irrelevant columns such as `Timestamp`, `state`, and `Country`.
+  * Set `treatment` as the target variable.
+
+* **Missing Values:**
+
+  * Imputation used to handle missing values in `Age`, `Gender`, and `work_interfere`.
+
+* **Outlier Detection and Handling:**
+
+  * Removed unrealistic age entries (e.g., age < 15 or > 80).
+
+* **Class Balance:**
+
+  * Moderate class imbalance observed in the target variable (`treatment`).
+
+* **Correlation Analysis:**
+
+  * `family_history` and `work_interfere` showed notable correlation with the target.
+
+* **Visualization Techniques Used:**
+
+  * Histograms, box plots, scatter plots, and feature distributions were explored.
+
+---
+
+## 🔧 4. Feature Selection
+
+Features included in the modeling process:
+
+* `Gender`
+* `Age`
+* `family_history`
+* `work_interfere`
+* `remote_work`
+* `benefits`
+* `care_options`
+* `tech_company`
+
+Columns such as `Timestamp`, `state`, and `Country` were excluded due to irrelevance or high cardinality with low predictive value.
+
+---
+
+## 🤖 5. Machine Learning Models Applied
+
+Two supervised learning models were implemented using Orange:
+
+* **Logistic Regression**
+* **Random Forest Classifier**
+
+Each model was evaluated using cross-validation with accuracy, AUC, F1 Score, precision, recall, and Matthews Correlation Coefficient (MCC) metrics.
+
+---
+
+## 📈 6. Evaluation and Performance Comparison
+
+| Metric        | Logistic Regression | Random Forest |
+| ------------- | ------------------- | ------------- |
+| **AUC**       | 0.747               | 0.788         |
+| **Accuracy**  | 65.9%               | 72.2%         |
+| **F1 Score**  | 0.646               | 0.722         |
+| **Precision** | 0.684               | 0.722         |
+| **Recall**    | 0.659               | 0.722         |
+| **MCC**       | 0.340               | 0.444         |
+
+### Key Observations:
+
+* **Best Performing Model:** Random Forest performed better across all evaluation metrics.
+* **Most Influential Features:** `family_history`, `work_interfere`, and `benefits`.
+* **Demographics Impact:** Gender and age had moderate influence, but work-related factors had higher predictive power.
+* **Limitations Identified:**
+
+  * Class imbalance and missing values slightly impacted performance.
+  * Inconsistent entries in `Gender` and `Age` reduced model clarity.
+
+---
+
+## 🧠 7. Interpretation of Results
+
+* **Model Insight:** Random Forest was more effective in capturing nonlinear relationships in the data, leading to better classification accuracy.
+* **Feature Insight:** Indicators related to workplace support (`benefits`, `care_options`, `work_interfere`) and personal background (`family_history`) were crucial in predicting mental health treatment.
+* **Data Quality Impact:** Missing data and demographic inconsistency (especially in gender entries) posed a challenge, but imputation and cleaning improved performance.
+
+---
+
+## ✅ 8. Conclusion
+
+This project successfully demonstrated how Orange Data Mining can be used to perform end-to-end machine learning without writing any code. The platform's intuitive visual interface enabled efficient data preprocessing, visualization, and model evaluation.
+
+* **Recommended Model:** Random Forest
+* **Future Work:**
+
+  * Use SMOTE or other resampling techniques to handle class imbalance.
+  * Consider refining gender and age categories for better consistency.
+
+---
+
+## 📁 9. Submitted Files
+
+* ✅ `ReadMe_YourProject.md` (completed based on provided template)
+* ✅ Orange workflow file (`.ows`)
+* ✅ Dataset link: [Kaggle Dataset](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+
+---
+
+
+## ✉️ Contact
+
+For any project-related questions: **[zhala.sarkawt@gmail.com]**
+
