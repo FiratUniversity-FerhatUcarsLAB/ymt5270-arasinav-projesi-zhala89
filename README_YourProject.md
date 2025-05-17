@@ -135,6 +135,6 @@
 
 > [mental\_health\_project.ows](project/mental_health_project.ows)
 
-### Dataset File or Link
+### Dataset File 
 
-> [mental\_health.csv](data/mental_health.csv) or [Online Source](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+> [mental\_health.csv](project/mental_health.csv) 
