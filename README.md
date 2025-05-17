@@ -59,6 +59,9 @@ Veri setinize uygun olarak aşağıdakilerden **BİRİNİ** seçip uygulayınız
 * Temel kullanım için [Orange Video Eğitimleri](https://www.youtube.com/OrangeDataMining) izlenebilir.
 * Ayrıca [Orange Dokümantasyonu](https://orangedatamining.com/docs/) detaylı bilgi için faydalı olacaktır.
 
+![Örnek Orange İş Akışı](img/example_workflow.png)
+
+
 ### Örnek İş Akışı
 
 Aşağıda basit bir örnek iş akışı gösterilmiştir:
