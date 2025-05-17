@@ -13,14 +13,6 @@
 ### 🔶 Orange Workflow
 ![Orange Workflow](img/orange_workflow.png)
 
-### 🧪 Test & Score Results
-![Test & Score](img/test&score.png)
-
-### 📊 Confusion Matrix
-![Confusion Matrix](img/confusion_matrix.png)
-
-### 🎯 Target: Treatment
-![Target Treatment](img/target,_treatment.png)
 
 ## Dataset
 
@@ -56,6 +48,7 @@
 > * Age: Mean = 32.1, Min = 18, Max = 72 (outliers > 100 removed)
 > * Gender: normalized to standard categories (e.g., Male, Female, Non-binary)
 > * 2.4% missing data across features; handled via imputation
+ ![Target Treatment Column](img/target_treatment.png)
 
 ### Data Preprocessing
 
@@ -68,13 +61,12 @@
 
 #### Visualization 1: Class Distribution
 
-![Class Distribution](images/class_distribution.png)
 
 > Shows a moderate class imbalance between those who sought treatment vs. those who did not.
 
 #### Visualization 2: Family History vs Treatment
 
-![Family History vs Treatment](images/family_treatment.png)
+
 
 > Strong correlation between family mental illness history and likelihood of seeking treatment.
 
@@ -106,6 +98,20 @@
 | Recall    | 0.659               | 0.722         |
 | MCC       | 0.340               | 0.444         |
 
+### Model Değerlendirmesi
+
+### Model Evaluation
+
+#### Test & Score Widget Output
+![Test Score](img/test_score.png)
+> This figure shows the comparative metrics of the applied models.
+
+#### Confusion Matrix
+![Confusion Matrix](images/confusion_matrix.png)
+> This matrix displays the distribution of predicted vs actual class labels.
+
+
+
 ### Interpretation of Results
 
 > Random Forest outperformed Logistic Regression across all metrics. This model effectively captured non-linear patterns in the data. Important features were work-related, rather than demographic. Limitations included inconsistent data entries and class imbalance.
@@ -114,7 +120,6 @@
 
 > Below is the Orange workflow used in this project. It includes steps for file import, preprocessing, visualization, model training, and evaluation.
 
-![Orange Workflow](images/orange_workflow.png)
 
 ## Conclusion and Recommendations
 
