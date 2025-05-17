@@ -14,13 +14,13 @@
 ![Orange Workflow](img/orange_workflow.png)
 
 ### 🧪 Test & Score Results
-![Test & Score](img/test_score.png)
+![Test & Score](img/test&score.png)
 
 ### 📊 Confusion Matrix
 ![Confusion Matrix](img/confusion_matrix.png)
 
 ### 🎯 Target: Treatment
-![Target Treatment](img/target_treatment.png)
+![Target Treatment](img/target,_treatment.png)
 
 ## Dataset
 
