@@ -59,8 +59,9 @@
 
 ### Visualizations
 
-#### Visualization 1: Class Distribution
-
+#### Visualization 1: Target vs Treatment Column
+![Target Treatment Column](img/target_treatment.png)
+> This visualization shows the distribution of the `treatment` target variable.
 
 > Shows a moderate class imbalance between those who sought treatment vs. those who did not.
 
@@ -107,9 +108,8 @@
 > This figure shows the comparative metrics of the applied models.
 
 #### Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
+![Confusion Matrix](img/confusion_matrix.png)
 > This matrix displays the distribution of predicted vs actual class labels.
-
 
 
 ### Interpretation of Results
