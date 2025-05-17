@@ -48,7 +48,6 @@
 > * Age: Mean = 32.1, Min = 18, Max = 72 (outliers > 100 removed)
 > * Gender: normalized to standard categories (e.g., Male, Female, Non-binary)
 > * 2.4% missing data across features; handled via imputation
- ![Target Treatment Column](img/target_treatment.png)
 
 ### Data Preprocessing
 
