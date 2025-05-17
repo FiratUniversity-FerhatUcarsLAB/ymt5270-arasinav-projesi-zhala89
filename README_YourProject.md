@@ -8,7 +8,7 @@
 
 ## Project Summary
 
-> This project analyzes the "Mental Health in Tech Survey" dataset, sourced from Kaggle, to explore patterns in mental health treatment among tech workers. The goal is to predict whether an individual has sought mental health treatment based on demographic and workplace factors. Orange Data Mining was used for Exploratory Data Analysis (EDA), preprocessing, and machine learning classification without requiring any programming. Key preprocessing steps included imputation for missing values and removal of outliers. Two classification models were tested: Logistic Regression and Random Forest. Random Forest achieved the best performance with an accuracy of 72.2% and AUC of 0.788. The most important features influencing treatment prediction were family history, work interference, and benefits. This project demonstrates the effectiveness of visual data mining tools like Orange in building interpretable ML workflows.
+> This project analyzes the "Mental Health in Tech Survey" dataset, sourced from Kaggle, to explore patterns in mental health treatment among tech workers. The goal is to predict whether an individual has sought mental health treatment based on demographic and workplace factors. Orange Data Mining was used for Exploratory Data Analysis (EDA), preprocessing, and machine learning classification without requiring any programming. Key preprocessing steps included imputation for missing values and removal of outliers. Two classification models were tested: Logistic Regression and Random Forest. Random Forest achieved the best performance with an accuracy of 72.2% and an AUC of 0.788. Family history, work interference, and benefits were the most important features influencing treatment prediction. This project demonstrates the effectiveness of visual data mining tools like Orange in building interpretable ML workflows.
 
 ### 🔶 Orange Workflow
 ![Orange Workflow](img/orange_workflow.png)
@@ -128,7 +128,6 @@
 
 1. [Kaggle Dataset](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
 2. Orange Data Mining: [https://orangedatamining.com/](https://orangedatamining.com/)
-3. Scikit-learn Metrics Documentation: [https://scikit-learn.org/stable/modules/model\_evaluation.html](https://scikit-learn.org/stable/modules/model_evaluation.html)
 
 ## Appendices
 
