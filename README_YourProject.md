@@ -4,7 +4,7 @@
 
 * **Full Name**: Zhala Sarkawt Othman
 * **Student Number**: *(241137201)*
-* **Email**: *(Zhala Sarkawt Othman)*
+* **Email**: *(zhala.sarkawt@gmail.com)*
 
 ## Project Summary
 
